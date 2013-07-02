@@ -19,7 +19,8 @@ print "Sending message..."
 uri = "127.0.0.1:9393/" #set to whatever server is running your sinatra
 
 # TODO: Post the message to the server
+Typhoeus.post(uri, :body => {:sender => sender, :receiver => receiver, :content => message})
 
 puts "done!"
 puts "Message Posted Successfully!"
-puts ""
+puts "Dear #{receiver}, #{sender} says #{message}."
